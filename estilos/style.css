@@ -15,13 +15,21 @@
   --fundo-card: #ffffff;
 }
 
-header{
-  background-color: var(--destaque);
+body{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  line-height: 1.5em;
+  background-color: var(--fundo-principal);
   color: var(--texto);
-  padding: 10px;
+}
+
+header{
   display: flex;
   justify-content: flex-end;
   align-content: center;
+  background-color: var(--destaque);
+  color: var(--texto);
+  padding: 10px;
+
 }
 
 nav#menu ul{
@@ -42,14 +50,6 @@ nav#menu a{
 nav#menu a:hover{
   background-color: var(--destaque-inverso);
   color: var(--destaque);
-}
-
-
-body{
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  line-height: 1.5em;
-  background-color: var(--fundo-principal);
-  color: var(--texto);
 }
 
 main {
@@ -74,7 +74,7 @@ section#ficha img.foto{
   outline: 5px solid var(--destaque);
   display: block;
   margin: auto;
-  margin-top: 15px;
+
 }
 
 section#ficha h1{
@@ -91,7 +91,6 @@ div#social{
   font-size: 1.6em;
   gap: 1em;
   margin-top: 15px;
-  text-decoration: none;
 }
 
 div#social a{
@@ -101,4 +100,78 @@ div#social a{
 
 div#social a:hover{
   color: var(--destaque-inverso);
+}
+
+section#detalhes{
+  margin-top: 20px;
+  grid-column: 2;
+}
+
+article{
+  background-color: var(--fundo-card);
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+
+article h2{
+  color: var(--destaque);
+  margin-bottom: 15px;
+}
+
+.video-container{
+  position: relative;
+  width: 100%;
+  margin: auto;
+  aspect-ratio: 16/9;
+}
+
+.video-container iframe{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+}
+
+#skill-container{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+}
+
+#skill-container .info{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#skill-container .nome{
+  font-weight: bold;
+  color: var(--texto);
+}
+
+#skill-container .porcent{
+  font-weight: bold;
+  color: var(--destaque);
+}
+
+#skill-container .barra{
+  width: 100%;
+  height: 8px;
+  background-color: var(--fundo-principal);
+  border-radius: 4px;
+}
+
+#skill-container .progresso{
+  height: 100%;
+  background-color: var(--destaque-inverso);
+  border-radius: 4px;
+}
+
+@media screen and (min-width: 768px) {
+  #skill-container{
+    grid-template-columns: 1fr 1fr;
+  }
 }
